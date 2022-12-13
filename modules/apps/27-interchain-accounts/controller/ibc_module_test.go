@@ -8,12 +8,12 @@ import (
 	capabilitytypes "github.com/cosmos/cosmos-sdk/x/capability/types"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/commercionetwork/ibc-go/v3/modules/apps/27-interchain-accounts/controller/types"
-	icatypes "github.com/commercionetwork/ibc-go/v3/modules/apps/27-interchain-accounts/types"
-	clienttypes "github.com/commercionetwork/ibc-go/v3/modules/core/02-client/types"
-	channeltypes "github.com/commercionetwork/ibc-go/v3/modules/core/04-channel/types"
-	host "github.com/commercionetwork/ibc-go/v3/modules/core/24-host"
-	ibctesting "github.com/commercionetwork/ibc-go/v3/testing"
+	"github.com/cosmos/ibc-go/v3/modules/apps/27-interchain-accounts/controller/types"
+	icatypes "github.com/cosmos/ibc-go/v3/modules/apps/27-interchain-accounts/types"
+	clienttypes "github.com/cosmos/ibc-go/v3/modules/core/02-client/types"
+	channeltypes "github.com/cosmos/ibc-go/v3/modules/core/04-channel/types"
+	host "github.com/cosmos/ibc-go/v3/modules/core/24-host"
+	ibctesting "github.com/cosmos/ibc-go/v3/testing"
 )
 
 var (

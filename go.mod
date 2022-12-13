@@ -1,6 +1,6 @@
 go 1.18
 
-module github.com/commercionetwork/ibc-go/v3
+module github.com/cosmos/ibc-go/v3
 
 retract [v3.0.0, v3.3.0] // depends on SDK version without dragonberry fix
 
@@ -8,7 +8,6 @@ require (
 	github.com/armon/go-metrics v0.4.0
 	github.com/confio/ics23/go v0.7.0
 	github.com/cosmos/cosmos-sdk v0.45.11
-	github.com/cosmos/ibc-go/v3 v3.4.0
 	github.com/gogo/protobuf v1.3.3
 	github.com/golang/protobuf v1.5.2
 	github.com/gorilla/mux v1.8.0

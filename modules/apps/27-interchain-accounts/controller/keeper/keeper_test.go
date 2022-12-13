@@ -5,9 +5,9 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	icatypes "github.com/commercionetwork/ibc-go/v3/modules/apps/27-interchain-accounts/types"
-	channeltypes "github.com/commercionetwork/ibc-go/v3/modules/core/04-channel/types"
-	ibctesting "github.com/commercionetwork/ibc-go/v3/testing"
+	icatypes "github.com/cosmos/ibc-go/v3/modules/apps/27-interchain-accounts/types"
+	channeltypes "github.com/cosmos/ibc-go/v3/modules/core/04-channel/types"
+	ibctesting "github.com/cosmos/ibc-go/v3/testing"
 )
 
 var (

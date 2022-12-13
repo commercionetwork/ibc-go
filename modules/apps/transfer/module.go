@@ -17,11 +17,11 @@ import (
 	"github.com/spf13/cobra"
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/commercionetwork/ibc-go/v3/modules/apps/transfer/client/cli"
-	"github.com/commercionetwork/ibc-go/v3/modules/apps/transfer/keeper"
-	"github.com/commercionetwork/ibc-go/v3/modules/apps/transfer/simulation"
-	"github.com/commercionetwork/ibc-go/v3/modules/apps/transfer/types"
-	porttypes "github.com/commercionetwork/ibc-go/v3/modules/core/05-port/types"
+	"github.com/cosmos/ibc-go/v3/modules/apps/transfer/client/cli"
+	"github.com/cosmos/ibc-go/v3/modules/apps/transfer/keeper"
+	"github.com/cosmos/ibc-go/v3/modules/apps/transfer/simulation"
+	"github.com/cosmos/ibc-go/v3/modules/apps/transfer/types"
+	porttypes "github.com/cosmos/ibc-go/v3/modules/core/05-port/types"
 )
 
 var (
