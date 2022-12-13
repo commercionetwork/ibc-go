@@ -13,11 +13,11 @@ import (
 	"github.com/tendermint/tendermint/libs/log"
 	dbm "github.com/tendermint/tm-db"
 
-	clienttypes "github.com/cosmos/ibc-go/v3/modules/core/02-client/types"
-	"github.com/cosmos/ibc-go/v3/modules/core/04-channel/types"
-	commitmenttypes "github.com/cosmos/ibc-go/v3/modules/core/23-commitment/types"
-	"github.com/cosmos/ibc-go/v3/modules/core/exported"
-	"github.com/cosmos/ibc-go/v3/testing/simapp"
+	clienttypes "github.com/commercionetwork/ibc-go/v3/modules/core/02-client/types"
+	"github.com/commercionetwork/ibc-go/v3/modules/core/04-channel/types"
+	commitmenttypes "github.com/commercionetwork/ibc-go/v3/modules/core/23-commitment/types"
+	"github.com/commercionetwork/ibc-go/v3/modules/core/exported"
+	"github.com/commercionetwork/ibc-go/v3/testing/simapp"
 )
 
 const (

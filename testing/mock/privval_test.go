@@ -7,7 +7,7 @@ import (
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 	tmtypes "github.com/tendermint/tendermint/types"
 
-	"github.com/cosmos/ibc-go/v3/testing/mock"
+	"github.com/commercionetwork/ibc-go/v3/testing/mock"
 )
 
 const chainID = "testChain"

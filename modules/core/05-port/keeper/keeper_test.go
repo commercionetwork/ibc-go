@@ -8,8 +8,8 @@ import (
 	"github.com/stretchr/testify/suite"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
-	"github.com/cosmos/ibc-go/v3/modules/core/05-port/keeper"
-	"github.com/cosmos/ibc-go/v3/testing/simapp"
+	"github.com/commercionetwork/ibc-go/v3/modules/core/05-port/keeper"
+	"github.com/commercionetwork/ibc-go/v3/testing/simapp"
 )
 
 var (

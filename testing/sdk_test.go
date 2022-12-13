@@ -27,9 +27,9 @@ import (
 	tmrand "github.com/tendermint/tendermint/libs/rand"
 	dbm "github.com/tendermint/tm-db"
 
-	ibcclientcli "github.com/cosmos/ibc-go/v3/modules/core/02-client/client/cli"
-	"github.com/cosmos/ibc-go/v3/testing/simapp"
-	"github.com/cosmos/ibc-go/v3/testing/simapp/params"
+	ibcclientcli "github.com/commercionetwork/ibc-go/v3/modules/core/02-client/client/cli"
+	"github.com/commercionetwork/ibc-go/v3/testing/simapp"
+	"github.com/commercionetwork/ibc-go/v3/testing/simapp/params"
 )
 
 /*
