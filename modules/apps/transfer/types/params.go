@@ -18,6 +18,8 @@ var (
 	KeySendEnabled = []byte("SendEnabled")
 	// KeyReceiveEnabled is store's key for ReceiveEnabled Params
 	KeyReceiveEnabled = []byte("ReceiveEnabled")
+	// KeyReceiveEnabled is store's key for ReceiveEnabled Params
+	KeyAllowedAddresses = []byte("AllowedAddresses")
 )
 
 // ParamKeyTable type declaration for parameters
@@ -26,16 +28,18 @@ func ParamKeyTable() paramtypes.KeyTable {
 }
 
 // NewParams creates a new parameter configuration for the ibc transfer module
-func NewParams(enableSend, enableReceive bool) Params {
+func NewParams(enableSend, enableReceive bool, allowedAddresses []string) Params {
 	return Params{
-		SendEnabled:    enableSend,
-		ReceiveEnabled: enableReceive,
+		SendEnabled:      enableSend,
+		ReceiveEnabled:   enableReceive,
+		AllowedAddresses: allowedAddresses,
 	}
 }
 
 // DefaultParams is the default parameter configuration for the ibc-transfer module
 func DefaultParams() Params {
-	return NewParams(DefaultSendEnabled, DefaultReceiveEnabled)
+	var DefaultAllowedAddresses []string
+	return NewParams(DefaultSendEnabled, DefaultReceiveEnabled, DefaultAllowedAddresses)
 }
 
 // Validate all ibc-transfer module parameters
@@ -52,11 +56,21 @@ func (p *Params) ParamSetPairs() paramtypes.ParamSetPairs {
 	return paramtypes.ParamSetPairs{
 		paramtypes.NewParamSetPair(KeySendEnabled, p.SendEnabled, validateEnabled),
 		paramtypes.NewParamSetPair(KeyReceiveEnabled, p.ReceiveEnabled, validateEnabled),
+		paramtypes.NewParamSetPair(KeyAllowedAddresses, p.AllowedAddresses, validateSlice),
 	}
 }
 
 func validateEnabled(i interface{}) error {
 	_, ok := i.(bool)
+	if !ok {
+		return fmt.Errorf("invalid parameter type: %T", i)
+	}
+
+	return nil
+}
+
+func validateSlice(i interface{}) error {
+	_, ok := i.([]string)
 	if !ok {
 		return fmt.Errorf("invalid parameter type: %T", i)
 	}

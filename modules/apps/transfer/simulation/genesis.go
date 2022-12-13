@@ -39,11 +39,12 @@ func RandomizedGenState(simState *module.SimulationState) {
 		simState.Cdc, string(types.KeyReceiveEnabled), &receiveEnabled, simState.Rand,
 		func(r *rand.Rand) { receiveEnabled = RadomEnabled(r) },
 	)
+	var allowedAddresses []string
 
 	transferGenesis := types.GenesisState{
 		PortId:      portID,
 		DenomTraces: types.Traces{},
-		Params:      types.NewParams(sendEnabled, receiveEnabled),
+		Params:      types.NewParams(sendEnabled, receiveEnabled, allowedAddresses),
 	}
 
 	bz, err := json.MarshalIndent(&transferGenesis, "", " ")

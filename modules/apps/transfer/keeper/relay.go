@@ -98,6 +98,10 @@ func (k Keeper) sendTransfer(
 		return 0, sdkerrors.Wrapf(sdkerrors.ErrUnauthorized, "%s is not allowed to send funds", sender)
 	}
 
+	if !k.IsAddressEnabled(ctx, sender) {
+		return 0, sdkerrors.Wrapf(sdkerrors.ErrUnauthorized, "%s is not allowed to transfers tokens", sender)
+	}
+
 	sourceChannelEnd, found := k.channelKeeper.GetChannel(ctx, sourcePort, sourceChannel)
 	if !found {
 		return 0, sdkerrors.Wrapf(channeltypes.ErrChannelNotFound, "port ID (%s) channel ID (%s)", sourcePort, sourceChannel)

@@ -20,9 +20,26 @@ func (k Keeper) GetReceiveEnabled(ctx sdk.Context) bool {
 	return res
 }
 
+// GetReceiveEnabled retrieves the receive enabled boolean from the paramstore
+func (k Keeper) GetAllowedAddresses(ctx sdk.Context) []string {
+	var res []string
+	k.paramSpace.Get(ctx, types.KeyAllowedAddresses, &res)
+	return res
+}
+
+func (k Keeper) IsAddressEnabled(ctx sdk.Context, sender sdk.Address) bool {
+	str := sender.String()
+	for _, v := range k.GetAllowedAddresses(ctx) {
+		if v == str {
+			return true
+		}
+	}
+	return false
+}
+
 // GetParams returns the total set of ibc-transfer parameters.
 func (k Keeper) GetParams(ctx sdk.Context) types.Params {
-	return types.NewParams(k.GetSendEnabled(ctx), k.GetReceiveEnabled(ctx))
+	return types.NewParams(k.GetSendEnabled(ctx), k.GetReceiveEnabled(ctx), k.GetAllowedAddresses(ctx))
 }
 
 // SetParams sets the total set of ibc-transfer parameters.

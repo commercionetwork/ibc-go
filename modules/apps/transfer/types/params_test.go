@@ -8,5 +8,5 @@ import (
 
 func TestValidateParams(t *testing.T) {
 	require.NoError(t, DefaultParams().Validate())
-	require.NoError(t, NewParams(true, false).Validate())
+	require.NoError(t, NewParams(true, false, make([]string, 0)).Validate())
 }
